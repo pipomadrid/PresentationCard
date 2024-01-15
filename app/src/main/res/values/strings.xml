@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PresentationCard</string>
+    <string name="name">Pedro Sáez</string>
+    <string name="job">Android Developer</string>
+    <string name="phone">+34 620 68 30 59</string>
+    <string name="share">@AndroidDev</string>
+    <string name="mail">pedrojosesaezperez@gmail.com</string>
+</resources>
