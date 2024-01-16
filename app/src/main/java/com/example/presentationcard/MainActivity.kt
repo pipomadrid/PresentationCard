@@ -29,10 +29,8 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.presentationcard.ui.theme.PresentationCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -60,10 +58,10 @@ fun ComposablePresentation() {
         phone = stringResource(id = R.string.phone),
         share = stringResource(id = R.string.share),
         mail = stringResource(id = R.string.mail),
-        backgroundcolor = Color(0xFFD6F5E1),
-        textcolor = Color(0xFF054F20),
+        backgroundcolor = MaterialTheme.colorScheme.surface,
+        textcolor = MaterialTheme.colorScheme.primary,
         image = painterResource(id = R.drawable.android_logo),
-
+//Color(0xFFD6F5E1)
     )
 }
 @Composable
@@ -86,11 +84,11 @@ Column(modifier = modifier
     ImageCard(image)
     Text(
         text = name,
-        fontSize = 30.sp,
+        style  = MaterialTheme.typography.titleLarge
     )
     Text(
         text = job,
-        fontWeight = FontWeight.Bold,
+        style  = MaterialTheme.typography.titleMedium,
         color = textcolor
     )
 }
@@ -113,7 +111,10 @@ Column(modifier = modifier
             )
             Text(
                 text = phone,
-                modifier = Modifier.weight(3f)
+                color = MaterialTheme.colorScheme.onSurface,
+                style  = MaterialTheme.typography.bodyLarge,
+                modifier = Modifier.weight(3f),
+
             )
         }
         Row(
@@ -130,6 +131,8 @@ Column(modifier = modifier
             )
             Text(
                 text = share,
+                color = MaterialTheme.colorScheme.onSurface,
+                style  = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.weight(3f)
 
             )
@@ -147,6 +150,8 @@ Column(modifier = modifier
             )
             Text(
                 text = mail,
+                color = MaterialTheme.colorScheme.onSurface,
+                style  = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.weight(3f)
             )
         }
@@ -162,7 +167,7 @@ private fun ImageCard(image: Painter){
         modifier= Modifier
             .size(100.dp)
             .clip(CircleShape)
-            .background(Color(0xFF06234E)).padding(15.dp)
+            .background(MaterialTheme.colorScheme.primary).padding(15.dp)
         )
 }
 @Preview(showBackground = true,
